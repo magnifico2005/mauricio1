@@ -1,0 +1,48 @@
+{
+  "dr-mauricio-hero": {
+    "widths": [
+      480,
+      720,
+      960,
+      1280
+    ],
+    "largestWidth": 1280,
+    "largestHeight": 1998
+  },
+  "editorial-performance": {
+    "widths": [
+      480,
+      800,
+      1200
+    ],
+    "largestWidth": 1200,
+    "largestHeight": 800
+  },
+  "editorial-consultation": {
+    "widths": [
+      480,
+      800,
+      1200
+    ],
+    "largestWidth": 1200,
+    "largestHeight": 800
+  },
+  "article-rotina": {
+    "widths": [
+      480,
+      800,
+      1200
+    ],
+    "largestWidth": 1200,
+    "largestHeight": 800
+  },
+  "article-performance": {
+    "widths": [
+      480,
+      800,
+      1200
+    ],
+    "largestWidth": 1200,
+    "largestHeight": 800
+  }
+}

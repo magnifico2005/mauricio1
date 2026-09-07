@@ -1,0 +1,12 @@
+{
+  "name": "Dr. Mauricio Neiva",
+  "short_name": "Dr. Mauricio Neiva",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#faf7f1",
+  "theme_color": "#0e1c29",
+  "icons": [
+    { "src": "/assets/images/favicon-180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/assets/images/favicon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

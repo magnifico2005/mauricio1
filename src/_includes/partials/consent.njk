@@ -1,0 +1,43 @@
+{% if site.analytics.enabled and site.analytics.ga4Id %}
+<div class="consent-banner" data-consent-banner hidden>
+  <p>Usamos cookies de mensuração para entender como o site é utilizado. Você pode aceitar ou recusar.</p>
+  <div class="consent-banner__actions">
+    <button type="button" class="btn btn--ghost" data-consent-decline>Recusar</button>
+    <button type="button" class="btn btn--primary" data-consent-accept>Aceitar</button>
+  </div>
+</div>
+<script>
+  (function () {
+    var KEY = "consent-analytics";
+    var stored = null;
+    try { stored = localStorage.getItem(KEY); } catch (e) {}
+
+    function loadGA4() {
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id={{ site.analytics.ga4Id }}";
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag("js", new Date());
+      window.gtag("config", "{{ site.analytics.ga4Id }}", { anonymize_ip: true });
+    }
+
+    if (stored === "accepted") { loadGA4(); return; }
+    if (stored === "declined") { return; }
+
+    var banner = document.querySelector("[data-consent-banner]");
+    if (!banner) return;
+    banner.hidden = false;
+    banner.querySelector("[data-consent-accept]").addEventListener("click", function () {
+      try { localStorage.setItem(KEY, "accepted"); } catch (e) {}
+      banner.hidden = true;
+      loadGA4();
+    });
+    banner.querySelector("[data-consent-decline]").addEventListener("click", function () {
+      try { localStorage.setItem(KEY, "declined"); } catch (e) {}
+      banner.hidden = true;
+    });
+  })();
+</script>
+{% endif %}

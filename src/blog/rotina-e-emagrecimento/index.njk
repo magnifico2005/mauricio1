@@ -1,0 +1,111 @@
+---
+title: "Como a rotina interfere no processo de emagrecimento? | Dr. Mauricio Neiva"
+description: "Pequenas decisões, contexto e acompanhamento: como a rotina diária influencia o emagrecimento."
+layout: layouts/base.njk
+category: "Hábitos"
+excerpt: "Pequenas decisões, contexto e acompanhamento."
+readingTime: 6
+datePublished: "2026-03-05"
+dateModified: "2026-08-20"
+ogImage: "/assets/images/article-rotina-1200.jpg"
+breadcrumbs:
+  - { name: "Início", url: "/" }
+  - { name: "Conteúdos", url: "/blog/" }
+  - { name: "Como a rotina interfere no processo de emagrecimento?", url: "/blog/rotina-e-emagrecimento/" }
+---
+{% from "macros/picture.njk" import responsivePicture with context %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Como a rotina interfere no processo de emagrecimento?",
+  "datePublished": "2026-03-05",
+  "dateModified": "2026-08-20",
+  "author": { "@type": "Physician", "name": "Dr. Mauricio Neiva", "identifier": "{{ site.crm }}" },
+  "image": "{{ site.url }}/assets/images/article-rotina-1200.jpg",
+  "publisher": { "@type": "Physician", "name": "Dr. Mauricio Neiva" },
+  "mainEntityOfPage": "{{ site.url }}/blog/rotina-e-emagrecimento/"
+}
+</script>
+
+<div class="reading-progress" aria-hidden="true"></div>
+
+<section class="section" style="padding-top: var(--space-lg); padding-bottom: var(--space-md);">
+  <div class="container article-header">
+    <p class="eyebrow" data-reveal>Hábitos</p>
+    <h1 class="h1" data-reveal>Como a rotina interfere no processo de emagrecimento?</h1>
+    <div class="article-meta" data-reveal>
+      <span>{{ site.credential }}</span>
+      <span>Publicado em 5 de março de 2026</span>
+      <span>Revisado em 20 de agosto de 2026</span>
+      <span>6 min de leitura</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="editorial__figure" style="margin-bottom: var(--space-lg); max-width: var(--container-narrow); margin-inline:auto;" data-reveal>
+      {{ responsivePicture("article-rotina", "Mesa de café da manhã com frutas, planner e caneca, em luz natural", "(min-width: 780px) 780px, 100vw") }}
+    </div>
+
+    <div class="article-body" data-reveal>
+      <p>Alimentação e atividade física costumam receber toda a atenção quando o assunto é emagrecimento. Mas boa parte
+        do que sustenta — ou impede — esse processo acontece em decisões pequenas, repetidas todos os dias: horário de
+        dormir, tempo de deslocamento, pausas para comer, nível de estresse no trabalho.</p>
+
+      <h2>A rotina define o que é possível sustentar</h2>
+      <p>Um plano alimentar ou de exercícios pode ser tecnicamente correto e, ainda assim, impossível de manter se não
+        considerar a rotina de quem vai segui-lo. Isso explica por que orientações genéricas, replicadas de forma
+        idêntica para pessoas diferentes, tendem a durar pouco.</p>
+
+      <h2>Sono e estresse como parte da equação</h2>
+      <p>Sono insuficiente e estresse elevado estão associados a alterações no apetite e na energia disponível para
+        atividade física. Cuidar da rotina, portanto, não é um tema paralelo ao emagrecimento — é parte dele.</p>
+
+      <h2>Pequenas decisões que se acumulam</h2>
+      <ul>
+        <li>Horário de dormir e acordar, e sua regularidade ao longo da semana</li>
+        <li>Organização das refeições dentro da jornada de trabalho</li>
+        <li>Tempo disponível — real, não ideal — para atividade física</li>
+        <li>Estratégias para lidar com períodos de maior estresse</li>
+      </ul>
+
+      <blockquote>Saúde não acontece fora da rotina — ela acontece dentro dela.</blockquote>
+
+      <h2>O papel do acompanhamento médico</h2>
+      <p>Uma avaliação individualizada busca entender essa rotina real antes de propor qualquer orientação, e
+        acompanhar como ela muda ao longo do tempo — ajustando o que for necessário, em vez de manter um plano fixo
+        independentemente do contexto.</p>
+    </div>
+
+    <div class="container--narrow references">
+      <h2 class="h3">Referências</h2>
+      <ol>
+        <li>Ministério da Saúde (Brasil). <em>Guia Alimentar para a População Brasileira</em>. Disponível em: gov.br/saude</li>
+        <li>World Health Organization. <em>Physical activity</em> — Fact sheet. Disponível em: who.int/news-room/fact-sheets/detail/physical-activity</li>
+        <li>Conselho Federal de Medicina (CFM). Resolução CFM nº 2.336/2023 — publicidade médica. Disponível em: portal.cfm.org.br</li>
+      </ol>
+      <p class="review-note">Conteúdo informativo revisado antes da publicação por {{ site.credential }}. Não substitui
+        consulta médica.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--sand">
+  <div class="container">
+    <p class="eyebrow" data-reveal>Continue lendo</p>
+    <div class="post-list" style="margin-top: var(--space-md);">
+      {% for post in collections.articles %}
+        {% if post.url != page.url %}
+        <article class="post-card" data-reveal>
+          <p class="post-card__meta">{{ post.data.category }} · {{ post.data.readingTime }} min</p>
+          <h3 class="post-card__title">{{ post.data.title }}</h3>
+          <a href="{{ post.url }}" class="link-arrow">Ler artigo</a>
+        </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

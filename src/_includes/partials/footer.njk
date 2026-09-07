@@ -1,0 +1,38 @@
+{% from "macros/picture.njk" import logo with context %}
+<footer class="site-footer">
+  <div class="container site-footer__top">
+    <div>
+      <div class="site-footer__brand-row">
+        {{ logo("logo-mauricio-neiva", "Dr. Mauricio Neiva", "site-footer__mark") }}
+        <p class="site-footer__brand">Dr. Mauricio Neiva</p>
+      </div>
+      <p class="site-footer__credential">{{ site.credential }}<br>{{ site.address.street }}, {{ site.address.complement }}<br>{{ site.address.city }} — {{ site.address.state }}</p>
+    </div>
+    <div>
+      <h4>Navegação</h4>
+      <ul class="site-footer__list">
+        <li><a href="/sobre/">Sobre</a></li>
+        <li><a href="/emagrecimento/">Emagrecimento</a></li>
+        <li><a href="/performance/">Performance</a></li>
+        <li><a href="/blog/">Conteúdos</a></li>
+        <li><a href="/faq/">Perguntas frequentes</a></li>
+        <li><a href="/contato/">Contato</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contato</h4>
+      <ul class="site-footer__list">
+        <li><a href="https://wa.me/{{ site.whatsapp.number }}" data-track="click_whatsapp" data-track-label="footer">WhatsApp</a></li>
+        <li><a href="{{ site.instagram.url }}" data-track="click_instagram" data-track-label="footer" rel="noopener" target="_blank">Instagram {{ site.instagram.handle }}</a></li>
+        <li><a href="/politica-de-privacidade/">Política de Privacidade</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container site-footer__bottom">
+    <p>&copy; {{ currentYear }} Dr. Mauricio Neiva. Conteúdo informativo e não substitui consulta médica.</p>
+    <a class="site-footer__credit" href="https://mkimarketingmedico.com.br" target="_blank" rel="noopener" data-track="click_mki" data-track-label="footer">
+      {{ logo("logo-mki", "MKI Marketing Médico", "site-footer__credit-mark") }}
+      <span>Site desenvolvido por MKI Marketing Médico</span>
+    </a>
+  </div>
+</footer>

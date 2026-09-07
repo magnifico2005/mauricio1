@@ -1,0 +1,315 @@
+---
+title: "Dr. Mauricio Neiva | Emagrecimento e Performance em Belém"
+description: "Acompanhamento médico individualizado para emagrecimento, composição corporal e performance em Belém, com Dr. Mauricio Neiva — CRM-PA 7735."
+layout: layouts/base.njk
+bodyClass: is-home
+---
+{% from "macros/picture.njk" import responsivePicture with context %}
+
+<section class="hero">
+  <div class="hero__line" aria-hidden="true"></div>
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <span class="hero__kicker" data-reveal>{{ site.address.city }} — {{ site.address.state }} · Acompanhamento médico individualizado</span>
+      <h1 class="hero__title" data-reveal data-reveal-delay="1">Saúde não deveria ser <em>uma sequência de recomeços.</em></h1>
+      <p class="hero__lede" data-reveal data-reveal-delay="2">
+        Acompanhamento médico individualizado para quem busca compreender melhor o próprio corpo,
+        organizar prioridades e construir uma estratégia compatível com a própria rotina — em emagrecimento,
+        composição corporal e performance.
+      </p>
+      <div class="hero__actions" data-reveal data-reveal-delay="3">
+        <a href="/contato/#agendar" class="btn btn--on-dark" data-track="click_agendamento" data-track-label="hero">Agendar avaliação</a>
+        <a href="#abordagem" class="btn btn--ghost">Conhecer o acompanhamento</a>
+      </div>
+      <div class="hero__meta" data-reveal data-reveal-delay="3">
+        <span>{{ site.credential }}</span>
+        <span>{{ site.address.city }} — {{ site.address.state }}</span>
+      </div>
+    </div>
+    <div class="hero__figure figure-framed">
+      {{ responsivePicture("dr-mauricio-hero", "Dr. Mauricio Neiva, médico, retrato de estúdio", "(min-width: 960px) 40vw, 100vw", true) }}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="abordagem">
+  <div class="container">
+    <div class="manifesto">
+      <p class="manifesto__statement" data-reveal>Não existe uma única história por trás do peso.</p>
+      <div class="manifesto__aside" data-reveal data-reveal-delay="1">
+        <p class="lede">Sono irregular, rotina exigente, histórico de saúde, hábitos alimentares, medicamentos em uso,
+          nível de atividade física — cada um desses fatores pode influenciar de um jeito diferente em cada pessoa.</p>
+        <p>Por isso a consulta não parte de um protocolo pronto. Ela parte da avaliação de quem está ali.</p>
+      </div>
+    </div>
+
+    <div class="factors" style="margin-top: var(--space-xl);">
+      <div class="factor" data-reveal>
+        <span class="factor__index">01</span>
+        <div><h3 class="factor__title">Sono</h3><p class="factor__text">Qualidade e regularidade do sono interferem em apetite, energia e recuperação.</p></div>
+      </div>
+      <div class="factor" data-reveal data-reveal-delay="1">
+        <span class="factor__index">02</span>
+        <div><h3 class="factor__title">Rotina</h3><p class="factor__text">Horários de trabalho, deslocamento e responsabilidades moldam o que é sustentável no dia a dia.</p></div>
+      </div>
+      <div class="factor" data-reveal data-reveal-delay="2">
+        <span class="factor__index">03</span>
+        <div><h3 class="factor__title">Alimentação</h3><p class="factor__text">Padrões alimentares variam conforme cultura, disponibilidade de tempo e histórico pessoal.</p></div>
+      </div>
+      <div class="factor" data-reveal data-reveal-delay="3">
+        <span class="factor__index">04</span>
+        <div><h3 class="factor__title">Atividade física</h3><p class="factor__text">Tipo, frequência e intensidade compatíveis com a fase e a saúde de cada pessoa.</p></div>
+      </div>
+      <div class="factor" data-reveal>
+        <span class="factor__index">05</span>
+        <div><h3 class="factor__title">Saúde geral</h3><p class="factor__text">Condições clínicas existentes podem mudar completamente o que é indicado.</p></div>
+      </div>
+      <div class="factor" data-reveal data-reveal-delay="1">
+        <span class="factor__index">06</span>
+        <div><h3 class="factor__title">Medicamentos</h3><p class="factor__text">Alguns medicamentos em uso contínuo influenciam peso, energia e apetite.</p></div>
+      </div>
+      <div class="factor" data-reveal data-reveal-delay="2">
+        <span class="factor__index">07</span>
+        <div><h3 class="factor__title">Histórico</h3><p class="factor__text">Tentativas anteriores ajudam a entender o que já foi testado e o que fez sentido.</p></div>
+      </div>
+      <div class="factor" data-reveal data-reveal-delay="3">
+        <span class="factor__index">08</span>
+        <div><h3 class="factor__title">Recuperação</h3><p class="factor__text">Capacidade de descanso e recuperação entre estímulos físicos e mentais.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--sand">
+  <div class="container text-center">
+    <p class="h2 serif-italic measure" style="margin-inline:auto;" data-reveal>É por isso que a consulta começa antes da estratégia.</p>
+  </div>
+</section>
+
+<section class="section" id="objetivos">
+  <div class="container">
+    <p class="eyebrow" data-reveal>Ponto de partida</p>
+    <h2 class="h2" style="margin-top:0.5rem;" data-reveal>O que trouxe você até aqui?</h2>
+    <p class="lede" style="margin-top:0.75rem;" data-reveal>Escolha a opção mais próxima do seu momento. Isso não é uma triagem médica — é apenas um jeito de te mostrar o caminho mais relevante dentro do site.</p>
+
+    <div class="goals" style="margin-top: var(--space-lg);" data-reveal data-goals>
+      <div class="goals__grid">
+        <div class="goals__options" role="group" aria-label="O que trouxe você até aqui?">
+          <button type="button" class="goal-btn" aria-pressed="false"
+            data-result-title="Cuidar do peso"
+            data-result-text="A página de Emagrecimento explica como a avaliação considera rotina, histórico e saúde antes de qualquer estratégia."
+            data-result-href="/emagrecimento/" data-result-link-label="Ver Emagrecimento">
+            Quero cuidar do peso
+          </button>
+          <button type="button" class="goal-btn" aria-pressed="false"
+            data-result-title="Melhorar a disposição"
+            data-result-text="Energia e disposição no dia a dia passam por sono, rotina e saúde geral — temas tratados no acompanhamento de Performance."
+            data-result-href="/performance/" data-result-link-label="Ver Performance">
+            Quero melhorar minha disposição
+          </button>
+          <button type="button" class="goal-btn" aria-pressed="false"
+            data-result-title="Organizar a saúde"
+            data-result-text="Conheça como funciona a avaliação médica individualizada, do primeiro contato aos retornos de acompanhamento."
+            data-result-href="/sobre/" data-result-link-label="Conhecer o atendimento">
+            Quero organizar minha saúde
+          </button>
+          <button type="button" class="goal-btn" aria-pressed="false"
+            data-result-title="Cuidar da recuperação"
+            data-result-text="Para quem pratica esportes, recuperação, sono e composição corporal podem ser avaliados de forma integrada. Veja Performance."
+            data-result-href="/performance/" data-result-link-label="Ver Performance">
+            Pratico esporte e quero cuidar melhor da recuperação
+          </button>
+          <button type="button" class="goal-btn" aria-pressed="false"
+            data-result-title="Entender a composição corporal"
+            data-result-text="Composição corporal é mais do que o peso na balança. Veja como esse tema é tratado no acompanhamento de Emagrecimento."
+            data-result-href="/emagrecimento/" data-result-link-label="Ver Emagrecimento">
+            Quero entender melhor minha composição corporal
+          </button>
+          <button type="button" class="goal-btn" aria-pressed="false"
+            data-result-title="Outra necessidade"
+            data-result-text="Sem problema. O melhor caminho é conversar diretamente e explicar o seu momento pelo WhatsApp."
+            data-result-href="/contato/" data-result-link-label="Ir para contato">
+            Tenho outra necessidade
+          </button>
+        </div>
+        <div class="goals__result">
+          <p class="goals__placeholder" data-goals-placeholder>Selecione uma opção ao lado para ver o caminho mais indicado.</p>
+          <h3 hidden data-goals-title></h3>
+          <p hidden data-goals-text></p>
+          <a href="#" class="link-arrow" hidden data-goals-link></a>
+        </div>
+      </div>
+      <p class="goals__disclaimer">Esta seleção é apenas navegação. Não é diagnóstico, triagem médica, e não coleta informações clínicas.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark">
+  <div class="container">
+    <div class="editorial editorial--media-right">
+      <div class="editorial__figure">
+        {{ responsivePicture("editorial-consultation", "Ambiente preparado para uma conversa de cuidado médico", "(min-width: 860px) 50vw, 100vw") }}
+      </div>
+      <div class="editorial__body">
+        <p class="eyebrow" data-reveal>Emagrecimento</p>
+        <h2 class="h2" data-reveal>Menos fórmulas. Mais acompanhamento.</h2>
+        <p class="lede" data-reveal style="color: rgba(250,247,241,0.8);">A consulta é um espaço para organizar informações, entender prioridades e
+          construir uma estratégia compatível com a sua rotina — sem protocolos universais.</p>
+        <ul class="editorial__list" data-reveal>
+          <li>Avaliação cuidadosa e individualizada</li>
+          <li>Estratégia compatível com rotina e objetivos</li>
+          <li>Acompanhamento próximo, com ajustes quando necessário</li>
+          <li>Expectativas realistas, clareza e constância</li>
+        </ul>
+        <a href="/emagrecimento/" class="link-arrow" data-reveal style="margin-top:0.5rem;">Entender o acompanhamento</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="editorial editorial--media-left">
+      <div class="editorial__figure">
+        {{ responsivePicture("editorial-performance", "Itens de rotina e atividade física organizados em ambiente natural", "(min-width: 860px) 50vw, 100vw") }}
+      </div>
+      <div class="editorial__body">
+        <p class="eyebrow" data-reveal>Performance</p>
+        <h2 class="h2" data-reveal>Performance também é saber recuperar.</h2>
+        <p class="lede" data-reveal>Composição corporal, recuperação, energia e hábitos podem fazer parte de um
+          acompanhamento médico individualizado — para quem malha, corre, pratica esportes ou só quer mais consistência no dia a dia.</p>
+        <ul class="editorial__list" data-reveal>
+          <li>Energia e disposição para a rotina</li>
+          <li>Regularidade na prática de atividade física</li>
+          <li>Sono e recuperação avaliados de forma integrada</li>
+          <li>Composição corporal, não apenas peso</li>
+        </ul>
+        <a href="/performance/" class="link-arrow" data-reveal style="margin-top:0.5rem;">Conhecer performance</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--sand">
+  <div class="container">
+    <p class="eyebrow" data-reveal>Como funciona</p>
+    <h2 class="h2" style="margin-top:0.5rem;" data-reveal>Um plano começa pelo contexto.</h2>
+    <div class="process" style="margin-top: var(--space-lg);">
+      <ol class="process__list">
+        <li class="process__item" data-reveal>
+          <h3>Avaliação</h3>
+          <p>Conversa ampla sobre rotina, histórico, hábitos e saúde geral.</p>
+        </li>
+        <li class="process__item" data-reveal data-reveal-delay="1">
+          <h3>Prioridades</h3>
+          <p>Organização do que é mais relevante para o momento atual.</p>
+        </li>
+        <li class="process__item" data-reveal data-reveal-delay="2">
+          <h3>Estratégia</h3>
+          <p>Orientações compatíveis com a rotina real, não com um padrão genérico.</p>
+        </li>
+        <li class="process__item" data-reveal data-reveal-delay="3">
+          <h3>Acompanhamento</h3>
+          <p>Retornos para revisar, ajustar e sustentar o que faz sentido no tempo.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="about-preview">
+      <div class="about-preview__figure figure-framed" data-reveal>
+        {{ responsivePicture("dr-mauricio-hero", "Dr. Mauricio Neiva", "(min-width: 900px) 35vw, 100vw") }}
+      </div>
+      <div data-reveal data-reveal-delay="1">
+        <p class="eyebrow">Sobre</p>
+        <h2 class="h2" style="margin-top:0.5rem;">Cuidado médico com escuta, clareza e proximidade.</h2>
+        <p class="lede" style="margin-top:1rem;">{{ site.credential }}. Um acompanhamento construído a partir da avaliação
+          de cada paciente — respeitando contexto, rotina, objetivos e saúde.</p>
+        <a href="/sobre/" class="link-arrow" style="margin-top:1rem;">Conhecer a trajetória</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--sand">
+  <div class="container">
+    <p class="eyebrow" data-reveal>Conteúdos</p>
+    <h2 class="h2" style="margin-top:0.5rem;" data-reveal>Informação clara também faz parte do cuidado.</h2>
+    <div class="post-list" style="margin-top: var(--space-lg);">
+      {% for post in collections.articles | reverse | slice(0, 3) %}
+      <article class="post-card" data-reveal>
+        <p class="post-card__meta">{{ post.data.category }} · {{ post.data.readingTime }} min</p>
+        <h3 class="post-card__title">{{ post.data.title }}</h3>
+        <p class="post-card__excerpt">{{ post.data.excerpt }}</p>
+        <a href="{{ post.url }}" class="link-arrow">Ler artigo</a>
+      </article>
+      {% endfor %}
+    </div>
+    <a href="/blog/" class="link-arrow" style="margin-top: var(--space-lg); display:inline-flex;" data-reveal>Ver todos os conteúdos</a>
+  </div>
+</section>
+
+<section class="section" id="localizacao">
+  <div class="container">
+    <p class="eyebrow" data-reveal>Localização</p>
+    <h2 class="h2" style="margin-top:0.5rem;" data-reveal>Um espaço para conversar com calma.</h2>
+    <div class="location" style="margin-top: var(--space-lg);">
+      <div class="location__map" data-reveal>
+        <iframe
+          title="Mapa de localização — {{ site.address.street }}, {{ site.address.city }}"
+          src="https://www.google.com/maps?q={{ (site.address.street ~ ', ' ~ site.address.complement ~ ', ' ~ site.address.city ~ ' - ' ~ site.address.state) | urlencode }}&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="location__details" data-reveal data-reveal-delay="1">
+        <dl>
+          <dt>Endereço</dt><dd>{{ site.address.street }}<br>{{ site.address.complement }}</dd>
+          <dt>Cidade</dt><dd>{{ site.address.city }} — {{ site.address.state }}</dd>
+          <dt>Atendimento</dt><dd>Mediante agendamento prévio</dd>
+        </dl>
+        <div class="hero__actions" style="margin-top: var(--space-md); margin-left:0;">
+          <a class="btn btn--ghost" data-track="click_maps" target="_blank" rel="noopener"
+            href="https://www.google.com/maps/dir/?api=1&destination={{ (site.address.street ~ ', ' ~ site.address.complement ~ ', ' ~ site.address.city ~ ' - ' ~ site.address.state) | urlencode }}">
+            Como chegar
+          </a>
+          <a class="btn btn--ghost" href="{{ site.instagram.url }}" target="_blank" rel="noopener" data-track="click_instagram" data-track-label="location">Instagram {{ site.instagram.handle }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--sand" id="faq">
+  <div class="container container--narrow">
+    <p class="eyebrow" data-reveal>Perguntas frequentes</p>
+    <h2 class="h2" style="margin-top:0.5rem;" data-reveal>Antes de agendar.</h2>
+    <div style="margin-top: var(--space-lg);" data-reveal>
+      <div class="faq-item" data-open="false">
+        <button class="faq-item__q" aria-expanded="false">O atendimento é indicado apenas para quem quer emagrecer?<span class="faq-item__icon" aria-hidden="true"></span></button>
+        <div class="faq-item__a"><p>Não. A consulta pode abordar saúde, rotina, composição corporal e performance de forma individualizada.</p></div>
+      </div>
+      <div class="faq-item" data-open="false">
+        <button class="faq-item__q" aria-expanded="false">Como funciona o acompanhamento?<span class="faq-item__icon" aria-hidden="true"></span></button>
+        <div class="faq-item__a"><p>Parte da avaliação médica e pode incluir definição de prioridades, orientação e retornos para acompanhar a evolução.</p></div>
+      </div>
+      <div class="faq-item" data-open="false">
+        <button class="faq-item__q" aria-expanded="false">Existe promessa de resultado?<span class="faq-item__icon" aria-hidden="true"></span></button>
+        <div class="faq-item__a"><p>Não. Cada pessoa tem contexto e necessidades próprias — o foco está em um cuidado responsável, com expectativas realistas.</p></div>
+      </div>
+    </div>
+    <a href="/faq/" class="link-arrow" style="margin-top: var(--space-md); display:inline-flex;" data-reveal>Ver todas as perguntas frequentes</a>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="container">
+    <p class="eyebrow" style="justify-content:center;" data-reveal>Seu processo pode começar com uma avaliação</p>
+    <h2 class="cta-final__title" data-reveal>Vamos conversar sobre o seu momento.</h2>
+    <div class="cta-final__actions" data-reveal>
+      <a href="/contato/#agendar" class="btn btn--primary" data-track="click_agendamento" data-track-label="cta_final">Agendar avaliação</a>
+      <a href="https://wa.me/{{ site.whatsapp.number }}" class="btn btn--ghost" data-track="click_whatsapp" data-track-label="cta_final">Falar pelo WhatsApp</a>
+    </div>
+  </div>
+</section>

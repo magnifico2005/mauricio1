@@ -1,0 +1,100 @@
+---
+title: "Performance e acompanhamento médico em Belém | Dr. Mauricio Neiva"
+description: "Energia, recuperação, sono e composição corporal avaliados de forma integrada — acompanhamento médico para quem pratica atividade física em Belém."
+ogImage: "/assets/images/editorial-performance-1200.jpg"
+layout: layouts/base.njk
+breadcrumbs:
+  - { name: "Início", url: "/" }
+  - { name: "Performance", url: "/performance/" }
+---
+{% from "macros/picture.njk" import responsivePicture with context %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "Performance e acompanhamento médico em Belém",
+  "url": "{{ site.url }}/performance/",
+  "about": { "@type": "MedicalCondition", "name": "Condicionamento físico e recuperação" },
+  "lastReviewed": "2026-09-01",
+  "reviewedBy": { "@type": "Physician", "name": "Dr. Mauricio Neiva" }
+}
+</script>
+
+<section class="section" style="padding-top: var(--space-lg);">
+  <div class="container container--narrow">
+    <p class="eyebrow" data-reveal>Performance</p>
+    <h1 class="h1" data-reveal>Performance e acompanhamento médico em Belém.</h1>
+    <p class="lede" data-reveal style="margin-top:1rem;">Mais energia e consistência começam com atenção à saúde e uma
+      estratégia compatível com a sua rotina.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="editorial editorial--media-left">
+      <div class="editorial__figure" data-reveal>
+        {{ responsivePicture("editorial-performance", "Itens de rotina e atividade física organizados em ambiente natural", "(min-width: 860px) 50vw, 100vw") }}
+      </div>
+      <div class="editorial__body">
+        <p class="eyebrow">Performance começa pela saúde</p>
+        <h2 class="h2" style="margin-top:0.5rem;">Uma rotina ativa não precisa ser tratada com excessos.</h2>
+        <p data-reveal>Energia, recuperação, sono, composição corporal e hábitos podem ser avaliados de maneira
+          integrada — para quem malha algumas vezes por semana e para quem treina com objetivos mais específicos.</p>
+        <p data-reveal>Performance não é sobre extremos. É sobre ter saúde e consistência suficientes para sustentar a
+          própria rotina — seja ela qual for.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--sand">
+  <div class="container container--narrow stack-lg">
+    <div data-reveal>
+      <h2 class="h2">Uma visão ampla para objetivos diversos</h2>
+      <p style="margin-top:1rem;">O acompanhamento busca organizar prioridades para disposição diária, regularidade em
+        treinos e saúde consistente — considerando tanto quem pratica atividade física por qualidade de vida quanto
+        quem busca evoluir em uma prática esportiva específica.</p>
+      <ul class="editorial__list" style="margin-top:1rem;">
+        <li>Energia e disposição para a rotina</li>
+        <li>Sono e recuperação avaliados de forma integrada</li>
+        <li>Composição corporal, não apenas o peso</li>
+        <li>Regularidade compatível com a fase de vida</li>
+      </ul>
+    </div>
+    <div data-reveal>
+      <h2 class="h2">Cuidado complementar</h2>
+      <p style="margin-top:1rem;">Este acompanhamento é complementar ao trabalho de educadores físicos, fisioterapeutas
+        e nutricionistas — o objetivo é olhar para a saúde como um todo, não substituir esses profissionais.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <p class="eyebrow" data-reveal>Leitura relacionada</p>
+    <h2 class="h2" style="margin-top:0.5rem;" data-reveal>Conteúdos sobre performance</h2>
+    <div class="post-list" style="margin-top: var(--space-lg);">
+      {% for post in collections.articles %}
+        {% if post.data.category == "Saúde" or post.data.category == "Performance" %}
+        <article class="post-card" data-reveal>
+          <p class="post-card__meta">{{ post.data.category }} · {{ post.data.readingTime }} min</p>
+          <h3 class="post-card__title">{{ post.data.title }}</h3>
+          <p class="post-card__excerpt">{{ post.data.excerpt }}</p>
+          <a href="{{ post.url }}" class="link-arrow">Ler artigo</a>
+        </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="container">
+    <h2 class="cta-final__title" data-reveal>Vamos conversar sobre o seu atendimento.</h2>
+    <div class="cta-final__actions" data-reveal>
+      <a href="/contato/#agendar" class="btn btn--primary" data-track="click_agendamento" data-track-label="performance">Conversar sobre atendimento</a>
+      <a href="/emagrecimento/" class="btn btn--ghost">Conhecer emagrecimento</a>
+    </div>
+  </div>
+</section>

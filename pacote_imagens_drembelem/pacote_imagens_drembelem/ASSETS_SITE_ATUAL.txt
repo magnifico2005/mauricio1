@@ -1,0 +1,26 @@
+ATIVOS VISUAIS IDENTIFICADOS NO SITE ATUAL drembelem.com.br
+
+PRIORIDADE 1 — FOTO DO MÉDICO
+https://drembelem.com.br/assets/images/dr-mauricio-hero-authoridade.png
+Destino: 01_site_atual_originais/dr-mauricio-hero-authoridade.png
+Uso: hero, página Sobre, Open Graph quando apropriado.
+
+EDITORIAL — PERFORMANCE
+https://drembelem.com.br/assets/images/editorial-performance.jpg
+Destino: 01_site_atual_originais/editorial-performance.jpg
+Uso: seção/página Performance.
+
+EDITORIAL — CONSULTA
+https://drembelem.com.br/assets/images/editorial-consultation.jpg
+Destino: 01_site_atual_originais/editorial-consultation.jpg
+Uso: abordagem, consulta, atendimento, Sobre.
+
+ARTIGO/ROTINA
+https://drembelem.com.br/assets/images/article-rotina.png
+Destino: 01_site_atual_originais/article-rotina.png
+Uso: conteúdos sobre rotina, hábitos e emagrecimento.
+
+ARTIGO/PERFORMANCE
+https://drembelem.com.br/assets/images/article-performance.png
+Destino: 01_site_atual_originais/article-performance.png
+Uso: conteúdos sobre atividade, caminhada, recuperação e performance.

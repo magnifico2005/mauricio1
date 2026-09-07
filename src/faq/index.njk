@@ -1,0 +1,100 @@
+---
+title: "Perguntas frequentes | Dr. Mauricio Neiva"
+description: "Respostas objetivas sobre agendamento, funcionamento do acompanhamento e o que esperar da consulta com Dr. Mauricio Neiva."
+layout: layouts/base.njk
+breadcrumbs:
+  - { name: "Início", url: "/" }
+  - { name: "Perguntas frequentes", url: "/faq/" }
+---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Como agendar uma avaliação?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Use o WhatsApp para iniciar o contato e verificar disponibilidade, ou envie o formulário na página de contato." }
+    },
+    {
+      "@type": "Question",
+      "name": "O atendimento é presencial?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O endereço é o Edifício Parque Office, Rodovia Augusto Montenegro, Belém — PA. Os detalhes são confirmados no agendamento." }
+    },
+    {
+      "@type": "Question",
+      "name": "Existe resultado garantido?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Não. O cuidado médico é individualizado e não envolve promessas de resultado." }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso falar sobre emagrecimento e performance na mesma consulta?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Os temas podem ser abordados de acordo com a avaliação e as prioridades de cada pessoa." }
+    },
+    {
+      "@type": "Question",
+      "name": "O atendimento é indicado apenas para quem quer emagrecer?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Não. A consulta pode abordar saúde, rotina, composição corporal e performance de forma individualizada." }
+    },
+    {
+      "@type": "Question",
+      "name": "Como funciona o acompanhamento?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Parte da avaliação médica e pode incluir definição de prioridades, orientação e retornos para acompanhar a evolução e realizar ajustes." }
+    },
+    {
+      "@type": "Question",
+      "name": "É preciso levar exames na primeira consulta?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Não é obrigatório. Exames complementares são solicitados quando clinicamente indicados, a partir da avaliação inicial." }
+    }
+  ]
+}
+</script>
+
+<section class="section" style="padding-top: var(--space-lg);">
+  <div class="container container--narrow">
+    <p class="eyebrow" data-reveal>Perguntas frequentes</p>
+    <h1 class="h1" data-reveal>Antes de agendar.</h1>
+
+    <div style="margin-top: var(--space-lg);" data-reveal>
+      <div class="faq-item" data-open="false">
+        <button class="faq-item__q" aria-expanded="false">Como agendar uma avaliação?<span class="faq-item__icon" aria-hidden="true"></span></button>
+        <div class="faq-item__a"><p>Use o WhatsApp para iniciar o contato e verificar disponibilidade, ou envie o formulário na página de contato.</p></div>
+      </div>
+      <div class="faq-item" data-open="false">
+        <button class="faq-item__q" aria-expanded="false">O atendimento é presencial?<span class="faq-item__icon" aria-hidden="true"></span></button>
+        <div class="faq-item__a"><p>Sim. O endereço é o Edifício Parque Office, {{ site.address.street }}, {{ site.address.city }} — {{ site.address.state }}. Os detalhes são confirmados no agendamento.</p></div>
+      </div>
+      <div class="faq-item" data-open="false">
+        <button class="faq-item__q" aria-expanded="false">Existe resultado garantido?<span class="faq-item__icon" aria-hidden="true"></span></button>
+        <div class="faq-item__a"><p>Não. O cuidado médico é individualizado e não envolve promessas de resultado.</p></div>
+      </div>
+      <div class="faq-item" data-open="false">
+        <button class="faq-item__q" aria-expanded="false">Posso falar sobre emagrecimento e performance na mesma consulta?<span class="faq-item__icon" aria-hidden="true"></span></button>
+        <div class="faq-item__a"><p>Sim. Os temas podem ser abordados de acordo com a avaliação e as prioridades de cada pessoa.</p></div>
+      </div>
+      <div class="faq-item" data-open="false">
+        <button class="faq-item__q" aria-expanded="false">O atendimento é indicado apenas para quem quer emagrecer?<span class="faq-item__icon" aria-hidden="true"></span></button>
+        <div class="faq-item__a"><p>Não. A consulta pode abordar saúde, rotina, composição corporal e performance de forma individualizada.</p></div>
+      </div>
+      <div class="faq-item" data-open="false">
+        <button class="faq-item__q" aria-expanded="false">Como funciona o acompanhamento?<span class="faq-item__icon" aria-hidden="true"></span></button>
+        <div class="faq-item__a"><p>Parte da avaliação médica e pode incluir definição de prioridades, orientação e retornos para acompanhar a evolução e realizar ajustes.</p></div>
+      </div>
+      <div class="faq-item" data-open="false">
+        <button class="faq-item__q" aria-expanded="false">É preciso levar exames na primeira consulta?<span class="faq-item__icon" aria-hidden="true"></span></button>
+        <div class="faq-item__a"><p>Não é obrigatório. Exames complementares são solicitados quando clinicamente indicados, a partir da avaliação inicial.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="container">
+    <h2 class="cta-final__title" data-reveal>Ainda tem alguma dúvida?</h2>
+    <div class="cta-final__actions" data-reveal>
+      <a href="https://wa.me/{{ site.whatsapp.number }}" class="btn btn--primary" data-track="click_whatsapp" data-track-label="faq">Falar pelo WhatsApp</a>
+      <a href="/contato/" class="btn btn--ghost">Ir para contato</a>
+    </div>
+  </div>
+</section>

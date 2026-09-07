@@ -1,0 +1,32 @@
+---
+title: "Conteúdos sobre saúde, emagrecimento e performance | Dr. Mauricio Neiva"
+description: "Textos educativos sobre saúde, emagrecimento, hábitos, composição corporal e performance, com revisão médica e referências científicas."
+layout: layouts/base.njk
+breadcrumbs:
+  - { name: "Início", url: "/" }
+  - { name: "Conteúdos", url: "/blog/" }
+---
+
+<section class="section" style="padding-top: var(--space-lg);">
+  <div class="container container--narrow">
+    <p class="eyebrow" data-reveal>Conteúdos</p>
+    <h1 class="h1" data-reveal>Informação para decisões mais conscientes.</h1>
+    <p class="lede" data-reveal style="margin-top:1rem;">Textos educativos sobre saúde, emagrecimento, hábitos,
+      composição corporal e performance — com revisão editorial e referências científicas verificáveis.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="post-list">
+      {% for post in collections.articles %}
+      <article class="post-card" data-reveal>
+        <p class="post-card__meta">{{ post.data.category }} · {{ post.data.readingTime }} min</p>
+        <h2 class="post-card__title">{{ post.data.title }}</h2>
+        <p class="post-card__excerpt">{{ post.data.excerpt }}</p>
+        <a href="{{ post.url }}" class="link-arrow">Ler artigo</a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

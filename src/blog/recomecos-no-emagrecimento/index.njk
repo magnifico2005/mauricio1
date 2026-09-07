@@ -1,0 +1,116 @@
+---
+title: "Por que tantas pessoas recomeçam o processo de emagrecimento? | Dr. Mauricio Neiva"
+description: "Reflexões sobre rotina, estratégia e constância no processo de emagrecimento, com referências institucionais."
+layout: layouts/base.njk
+category: "Emagrecimento"
+excerpt: "Reflexões sobre rotina, estratégia e constância."
+readingTime: 6
+datePublished: "2026-01-15"
+dateModified: "2026-08-20"
+ogImage: "/assets/images/article-rotina-1200.jpg"
+breadcrumbs:
+  - { name: "Início", url: "/" }
+  - { name: "Conteúdos", url: "/blog/" }
+  - { name: "Por que tantas pessoas recomeçam o processo de emagrecimento?", url: "/blog/recomecos-no-emagrecimento/" }
+---
+{% from "macros/picture.njk" import responsivePicture with context %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Por que tantas pessoas recomeçam o processo de emagrecimento?",
+  "datePublished": "2026-01-15",
+  "dateModified": "2026-08-20",
+  "author": { "@type": "Physician", "name": "Dr. Mauricio Neiva", "identifier": "{{ site.crm }}" },
+  "image": "{{ site.url }}/assets/images/article-rotina-1200.jpg",
+  "publisher": { "@type": "Physician", "name": "Dr. Mauricio Neiva" },
+  "mainEntityOfPage": "{{ site.url }}/blog/recomecos-no-emagrecimento/"
+}
+</script>
+
+<div class="reading-progress" aria-hidden="true"></div>
+
+<section class="section" style="padding-top: var(--space-lg); padding-bottom: var(--space-md);">
+  <div class="container article-header">
+    <p class="eyebrow" data-reveal>Emagrecimento</p>
+    <h1 class="h1" data-reveal>Por que tantas pessoas recomeçam o processo de emagrecimento?</h1>
+    <div class="article-meta" data-reveal>
+      <span>{{ site.credential }}</span>
+      <span>Publicado em 15 de janeiro de 2026</span>
+      <span>Revisado em 20 de agosto de 2026</span>
+      <span>6 min de leitura</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="editorial__figure" style="margin-bottom: var(--space-lg); max-width: var(--container-narrow); margin-inline:auto;" data-reveal>
+      {{ responsivePicture("article-rotina", "Mesa de café da manhã com frutas, planner e caneca, em luz natural", "(min-width: 780px) 780px, 100vw") }}
+    </div>
+
+    <div class="article-body" data-reveal>
+      <p>É comum ouvir a mesma frase em consultas diferentes: "já tentei de tudo". Dietas restritivas, aplicativos de
+        contagem de calorias, programas de exercício intensos por algumas semanas — e, depois de um tempo, um novo
+        recomeço. Esse padrão de ciclos tem explicações que vão além de "falta de força de vontade".</p>
+
+      <h2>O problema de tratar o emagrecimento como evento único</h2>
+      <p>Planos muito restritivos costumam funcionar por um período curto, mas raramente consideram a rotina real da
+        pessoa — jornada de trabalho, sono, responsabilidades familiares, contexto financeiro. Quando o plano exige mais
+        do que a rotina permite sustentar, o abandono tende a acontecer, e não porque a pessoa "falhou", mas porque o
+        plano não era compatível com sua vida.</p>
+
+      <h2>Rotina, sono e contexto pesam mais do que parecem</h2>
+      <p>Qualidade de sono, nível de estresse, horários de trabalho e histórico de saúde influenciam apetite, energia e
+        capacidade de manter uma rotina de atividade física. A Organização Mundial da Saúde reconhece o sobrepeso e a
+        obesidade como condições multifatoriais, associadas a determinantes que vão além da alimentação isolada.</p>
+
+      <blockquote>Um plano só é sustentável quando cabe na rotina de quem vai segui-lo — e isso é sempre individual.</blockquote>
+
+      <h2>O papel da avaliação médica nesse ciclo</h2>
+      <p>Uma avaliação médica individualizada busca entender esse conjunto de fatores antes de qualquer orientação,
+        reduzindo a chance de propor algo que não seja sustentável no tempo. Isso não elimina o esforço necessário, mas
+        ajuda a direcioná-lo de forma mais realista.</p>
+
+      <h2>O que considerar antes de recomeçar mais uma vez</h2>
+      <ul>
+        <li>O plano anterior era compatível com sua rotina de trabalho e sono?</li>
+        <li>Havia acompanhamento para ajustes ao longo do caminho, ou era um protocolo fixo?</li>
+        <li>As expectativas de prazo e resultado eram realistas?</li>
+        <li>Condições de saúde ou medicamentos em uso foram considerados?</li>
+      </ul>
+
+      <p>Não existe fórmula universal. Existe avaliação, prioridade e acompanhamento — construídos de forma diferente
+        para cada pessoa.</p>
+    </div>
+
+    <div class="container--narrow references">
+      <h2 class="h3">Referências</h2>
+      <ol>
+        <li>World Health Organization. <em>Obesity and overweight</em> — Fact sheet. Disponível em: who.int/news-room/fact-sheets/detail/obesity-and-overweight</li>
+        <li>Ministério da Saúde (Brasil). <em>Estratégias para o cuidado da pessoa com doença crônica: obesidade</em>. Disponível em: gov.br/saude</li>
+        <li>Associação Brasileira para o Estudo da Obesidade e Síndrome Metabólica (ABESO). Diretrizes e materiais técnicos. Disponível em: abeso.org.br</li>
+      </ol>
+      <p class="review-note">Conteúdo informativo revisado antes da publicação por {{ site.credential }}. Não substitui
+        consulta médica.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--sand">
+  <div class="container">
+    <p class="eyebrow" data-reveal>Continue lendo</p>
+    <div class="post-list" style="margin-top: var(--space-md);">
+      {% for post in collections.articles %}
+        {% if post.url != page.url %}
+        <article class="post-card" data-reveal>
+          <p class="post-card__meta">{{ post.data.category }} · {{ post.data.readingTime }} min</p>
+          <h3 class="post-card__title">{{ post.data.title }}</h3>
+          <a href="{{ post.url }}" class="link-arrow">Ler artigo</a>
+        </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,74 @@
+---
+title: "Contato e localização | Dr. Mauricio Neiva em Belém"
+description: "Fale pelo WhatsApp ou envie uma mensagem para agendar uma avaliação com Dr. Mauricio Neiva — CRM-PA 7735, em Belém — PA."
+layout: layouts/base.njk
+breadcrumbs:
+  - { name: "Início", url: "/" }
+  - { name: "Contato", url: "/contato/" }
+---
+
+<section class="section" style="padding-top: var(--space-lg);" id="agendar">
+  <div class="container container--narrow">
+    <p class="eyebrow" data-reveal>Contato</p>
+    <h1 class="h1" data-reveal>Vamos conversar sobre o seu momento.</h1>
+    <p class="lede" data-reveal style="margin-top:1rem;">Use o WhatsApp para falar diretamente, ou envie os dados abaixo
+      para que a conversa comece já organizada.</p>
+
+    <div class="form-notice" data-reveal style="margin-top: var(--space-lg);">
+      <span aria-hidden="true">⚠</span>
+      <span>Não envie informações clínicas ou dados sensíveis por este formulário — ele serve apenas para organizar o
+        primeiro contato. Diagnósticos, exames e histórico de saúde devem ser tratados diretamente na consulta.</span>
+    </div>
+
+    <form data-whatsapp-form data-whatsapp-number="{{ site.whatsapp.number }}" data-reveal>
+      <div class="form-field">
+        <label for="contact-name">Nome</label>
+        <input type="text" id="contact-name" name="name" autocomplete="name" required>
+      </div>
+      <div class="form-field">
+        <label for="contact-phone">Seu WhatsApp</label>
+        <input type="tel" id="contact-phone" name="phone" autocomplete="tel" required>
+      </div>
+      <div class="form-field">
+        <label for="contact-subject">Assunto</label>
+        <select id="contact-subject" name="subject">
+          <option>Agendamento</option>
+          <option>Emagrecimento</option>
+          <option>Performance</option>
+          <option>Avaliação médica</option>
+          <option>Outra dúvida</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn--primary" data-track="contact_started" data-track-label="formulario">Abrir conversa no WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<section class="section section--sand" id="localizacao">
+  <div class="container">
+    <div class="location">
+      <div class="location__map" data-reveal>
+        <iframe
+          title="Mapa de localização — {{ site.address.street }}, {{ site.address.city }}"
+          src="https://www.google.com/maps?q={{ (site.address.street ~ ', ' ~ site.address.complement ~ ', ' ~ site.address.city ~ ' - ' ~ site.address.state) | urlencode }}&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="location__details" data-reveal data-reveal-delay="1">
+        <p class="eyebrow">Como chegar</p>
+        <h2 class="h2" style="margin-top:0.5rem;">{{ site.address.city }} — {{ site.address.state }}</h2>
+        <dl style="margin-top:1rem;">
+          <dt>Endereço</dt><dd>{{ site.address.street }}<br>{{ site.address.complement }}</dd>
+          <dt>Atendimento</dt><dd>Mediante agendamento prévio</dd>
+          <dt>Instagram</dt><dd><a href="{{ site.instagram.url }}" target="_blank" rel="noopener" data-track="click_instagram" data-track-label="contato">{{ site.instagram.handle }}</a></dd>
+        </dl>
+        <div class="hero__actions" style="margin-top: var(--space-md); margin-left:0;">
+          <a class="btn btn--primary" href="https://wa.me/{{ site.whatsapp.number }}" data-track="click_whatsapp" data-track-label="contato_pagina">Falar pelo WhatsApp</a>
+          <a class="btn btn--ghost" target="_blank" rel="noopener" data-track="click_maps"
+            href="https://www.google.com/maps/dir/?api=1&destination={{ (site.address.street ~ ', ' ~ site.address.complement ~ ', ' ~ site.address.city ~ ' - ' ~ site.address.state) | urlencode }}">
+            Como chegar
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

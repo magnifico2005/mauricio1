@@ -1,0 +1,41 @@
+{% from "macros/picture.njk" import logo with context %}
+<header class="site-header" data-scrolled="false">
+  <div class="container site-header__bar">
+    <a href="/" class="brand">
+      {{ logo("logo-mauricio-neiva", "Dr. Mauricio Neiva", "brand__mark") }}
+      <span class="brand__text">
+        <strong>Dr. Mauricio Neiva</strong>
+        <span>{{ site.specialty }} · {{ site.crm }}</span>
+      </span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Navegação principal">
+      <ul class="nav-desktop__list">
+        <li><a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Início</a></li>
+        <li><a href="/sobre/" {% if "/sobre/" in page.url %}aria-current="page"{% endif %}>Sobre</a></li>
+        <li><a href="/emagrecimento/" {% if "/emagrecimento/" in page.url %}aria-current="page"{% endif %}>Emagrecimento</a></li>
+        <li><a href="/performance/" {% if "/performance/" in page.url %}aria-current="page"{% endif %}>Performance</a></li>
+        <li><a href="/blog/" {% if "/blog/" in page.url %}aria-current="page"{% endif %}>Conteúdos</a></li>
+        <li><a href="/contato/" {% if "/contato/" in page.url %}aria-current="page"{% endif %}>Contato</a></li>
+      </ul>
+      <a href="/contato/#agendar" class="btn btn--primary" data-track="click_agendamento" data-track-label="header">Agendar avaliação</a>
+    </nav>
+
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav-mobile" aria-label="Abrir menu">
+      <span class="menu-toggle__box"><span></span><span></span><span></span></span>
+    </button>
+  </div>
+</header>
+
+<nav id="nav-mobile" class="nav-mobile" aria-label="Navegação mobile" data-open="false">
+  <ul class="nav-mobile__list">
+    <li><a href="/">Início</a></li>
+    <li><a href="/sobre/">Sobre</a></li>
+    <li><a href="/emagrecimento/">Emagrecimento</a></li>
+    <li><a href="/performance/">Performance</a></li>
+    <li><a href="/blog/">Conteúdos</a></li>
+    <li><a href="/contato/">Contato</a></li>
+  </ul>
+  <a href="/contato/#agendar" class="btn btn--on-dark nav-mobile__cta" data-track="click_agendamento" data-track-label="menu_mobile">Agendar avaliação</a>
+  <p class="nav-mobile__meta">{{ site.credential }} · {{ site.address.city }} — {{ site.address.state }}</p>
+</nav>

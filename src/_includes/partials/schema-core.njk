@@ -1,0 +1,47 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.url }}/#website",
+      "url": "{{ site.url }}/",
+      "name": "Dr. Mauricio Neiva",
+      "inLanguage": "pt-BR"
+    },
+    {
+      "@type": "Physician",
+      "@id": "{{ site.url }}/#physician",
+      "name": "Dr. Mauricio Neiva",
+      "legalName": "{{ site.legalName }}",
+      "url": "{{ site.url }}/",
+      "image": "{{ site.url }}/assets/images/dr-mauricio-hero-authoridade-1200.jpg",
+      "medicalSpecialty": "PrimaryCare",
+      "identifier": "{{ site.crm }}",
+      "sameAs": [
+        "{{ site.instagram.url }}"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "{{ site.address.street }}, {{ site.address.complement }}",
+        "addressLocality": "{{ site.address.city }}",
+        "addressRegion": "{{ site.address.state }}",
+        "addressCountry": "{{ site.address.country }}"
+      }
+    }{% if breadcrumbs %},
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {% for item in breadcrumbs %}
+        {
+          "@type": "ListItem",
+          "position": {{ loop.index }},
+          "name": "{{ item.name }}",
+          "item": "{{ site.url }}{{ item.url }}"
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    }{% endif %}
+  ]
+}
+</script>

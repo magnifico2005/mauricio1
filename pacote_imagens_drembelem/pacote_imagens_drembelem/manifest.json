@@ -1,0 +1,74 @@
+{
+  "project": "drembelem.com.br — pacote visual",
+  "doctor_asset_priority": "dr-mauricio-hero-authoridade.png",
+  "production_strategy": "AVIF primary, WebP fallback, original master",
+  "base64_for_large_images": false,
+  "live_assets": [
+    {
+      "name": "dr-mauricio-hero-authoridade",
+      "role": "hero / doctor portrait",
+      "priority": 1,
+      "url": "https://drembelem.com.br/assets/images/dr-mauricio-hero-authoridade.png",
+      "widths": [
+        480,
+        720,
+        960,
+        1280
+      ]
+    },
+    {
+      "name": "editorial-performance",
+      "role": "performance editorial",
+      "priority": 2,
+      "url": "https://drembelem.com.br/assets/images/editorial-performance.jpg",
+      "widths": [
+        480,
+        800,
+        1200
+      ]
+    },
+    {
+      "name": "editorial-consultation",
+      "role": "consultation editorial",
+      "priority": 2,
+      "url": "https://drembelem.com.br/assets/images/editorial-consultation.jpg",
+      "widths": [
+        480,
+        800,
+        1200
+      ]
+    },
+    {
+      "name": "article-rotina",
+      "role": "blog / routine",
+      "priority": 3,
+      "url": "https://drembelem.com.br/assets/images/article-rotina.png",
+      "widths": [
+        480,
+        800,
+        1200
+      ]
+    },
+    {
+      "name": "article-performance",
+      "role": "blog / performance",
+      "priority": 3,
+      "url": "https://drembelem.com.br/assets/images/article-performance.png",
+      "widths": [
+        480,
+        800,
+        1200
+      ]
+    }
+  ],
+  "rules": {
+    "doctor_portrait": "never synthesize or alter face; use source image",
+    "hero_loading": "eager/high fetch priority; not lazy",
+    "below_fold": "lazy",
+    "recommended_picture_order": [
+      "avif",
+      "webp",
+      "original"
+    ]
+  }
+}

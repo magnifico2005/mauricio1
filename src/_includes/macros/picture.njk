@@ -1,0 +1,34 @@
+{% macro responsivePicture(name, alt, sizes, priority, className) %}
+{%- set meta = imageMeta[name] -%}
+<picture>
+  <source type="image/avif" srcset="{% for w in meta.widths %}/assets/images/{{ name }}-{{ w }}.avif {{ w }}w{% if not loop.last %}, {% endif %}{% endfor %}" sizes="{{ sizes }}">
+  <source type="image/webp" srcset="{% for w in meta.widths %}/assets/images/{{ name }}-{{ w }}.webp {{ w }}w{% if not loop.last %}, {% endif %}{% endfor %}" sizes="{{ sizes }}">
+  <img
+    src="/assets/images/{{ name }}-{{ meta.largestWidth }}.jpg"
+    srcset="{% for w in meta.widths %}/assets/images/{{ name }}-{{ w }}.jpg {{ w }}w{% if not loop.last %}, {% endif %}{% endfor %}"
+    sizes="{{ sizes }}"
+    width="{{ meta.largestWidth }}"
+    height="{{ meta.largestHeight }}"
+    alt="{{ alt }}"
+    {% if priority %}fetchpriority="high" loading="eager" decoding="sync"{% else %}loading="lazy" decoding="async"{% endif %}
+    {% if className %}class="{{ className }}"{% endif %}
+  >
+</picture>
+{% endmacro %}
+
+{% macro logo(name, alt, className) %}
+{%- set meta = logoMeta[name] -%}
+<picture>
+  <source type="image/avif" srcset="{% for w in meta.widths %}/assets/images/{{ name }}-{{ w }}.avif {{ w }}w{% if not loop.last %}, {% endif %}{% endfor %}">
+  <source type="image/webp" srcset="{% for w in meta.widths %}/assets/images/{{ name }}-{{ w }}.webp {{ w }}w{% if not loop.last %}, {% endif %}{% endfor %}">
+  <img
+    src="/assets/images/{{ name }}-{{ meta.largestWidth }}.png"
+    srcset="{% for w in meta.widths %}/assets/images/{{ name }}-{{ w }}.png {{ w }}w{% if not loop.last %}, {% endif %}{% endfor %}"
+    width="{{ meta.largestWidth }}"
+    height="{{ meta.largestHeight }}"
+    alt="{{ alt }}"
+    loading="eager" decoding="async"
+    {% if className %}class="{{ className }}"{% endif %}
+  >
+</picture>
+{% endmacro %}

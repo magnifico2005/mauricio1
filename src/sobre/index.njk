@@ -1,0 +1,64 @@
+---
+title: "Sobre Dr. Mauricio Neiva | Médico em Belém"
+description: "Conheça a forma de atendimento de Dr. Mauricio Neiva — CRM-PA 7735, Clínica Geral, em Belém — PA."
+layout: layouts/base.njk
+breadcrumbs:
+  - { name: "Início", url: "/" }
+  - { name: "Sobre", url: "/sobre/" }
+---
+{% from "macros/picture.njk" import responsivePicture with context %}
+
+<section class="section" style="padding-top: var(--space-lg);">
+  <div class="container">
+    <div class="editorial editorial--media-right">
+      <div class="editorial__figure figure-framed" data-reveal>
+        {{ responsivePicture("dr-mauricio-hero", "Dr. Mauricio Neiva", "(min-width: 860px) 50vw, 100vw", true) }}
+      </div>
+      <div class="editorial__body">
+        <p class="eyebrow" data-reveal>Sobre</p>
+        <h1 class="h1" data-reveal>Cuidado médico com escuta, clareza e proximidade.</h1>
+        <p class="lede" data-reveal>{{ site.credential }} · {{ site.address.city }} — {{ site.address.state }}</p>
+        <p data-reveal>Atendo com foco em emagrecimento, composição corporal e performance — sempre a partir da avaliação
+          individual de cada paciente, e não de um protocolo padronizado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--sand">
+  <div class="container container--narrow stack-lg">
+    <div data-reveal>
+      <p class="eyebrow">Como enxergo o atendimento</p>
+      <h2 class="h2" style="margin-top:0.5rem;">Um acompanhamento que começa pela pessoa.</h2>
+      <p style="margin-top:1rem;">Antes de falar em estratégia, prefiro entender o contexto: como é a rotina, o histórico de
+        saúde, o que já foi tentado antes, o que é sustentável no dia a dia. Emagrecimento, disposição e performance
+        raramente têm uma única causa — e por isso raramente respondem bem a soluções genéricas.</p>
+    </div>
+    <div data-reveal>
+      <p class="eyebrow">Por que individualização importa</p>
+      <h2 class="h2" style="margin-top:0.5rem;">Cada pessoa carrega um contexto diferente.</h2>
+      <p style="margin-top:1rem;">Duas pessoas com o mesmo objetivo podem precisar de caminhos completamente diferentes.
+        Rotina de trabalho, qualidade do sono, condições de saúde, medicamentos em uso e histórico pessoal mudam o que
+        é razoável recomendar. Um plano só funciona quando é possível sustentá-lo — e isso é sempre individual.</p>
+    </div>
+    <div data-reveal>
+      <p class="eyebrow">Formação e atuação</p>
+      <h2 class="h2" style="margin-top:0.5rem;">{{ site.credential }}</h2>
+      <p style="margin-top:1rem;">Atuação em Clínica Geral, com atendimento voltado a emagrecimento, composição corporal
+        e performance. O registro profissional (CRM-PA 7735) pode ser conferido publicamente no site do
+        <a class="link-arrow" href="https://cremepa.org.br/busca-medicos" target="_blank" rel="noopener">Conselho Regional de Medicina do Pará</a>.</p>
+      <p class="review-note" style="margin-top:1rem;">Esta página apresenta apenas informações profissionais verificáveis.
+        Dados adicionais de formação serão incluídos aqui somente mediante confirmação documental.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="container">
+    <h2 class="cta-final__title" data-reveal>Seu processo pode começar com uma avaliação.</h2>
+    <div class="cta-final__actions" data-reveal>
+      <a href="/contato/#agendar" class="btn btn--primary" data-track="click_agendamento" data-track-label="sobre">Agendar avaliação</a>
+      <a href="/emagrecimento/" class="btn btn--ghost">Entender o acompanhamento</a>
+    </div>
+  </div>
+</section>

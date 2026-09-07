@@ -1,0 +1,111 @@
+---
+title: "Emagrecimento em Belém com acompanhamento médico | Dr. Mauricio Neiva"
+description: "Avaliação médica individualizada para emagrecimento em Belém, considerando rotina, saúde e composição corporal — sem fórmulas universais."
+ogImage: "/assets/images/editorial-consultation-1200.jpg"
+layout: layouts/base.njk
+breadcrumbs:
+  - { name: "Início", url: "/" }
+  - { name: "Emagrecimento", url: "/emagrecimento/" }
+---
+{% from "macros/picture.njk" import responsivePicture with context %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "Emagrecimento em Belém com acompanhamento médico",
+  "url": "{{ site.url }}/emagrecimento/",
+  "about": { "@type": "MedicalCondition", "name": "Manejo do peso corporal" },
+  "lastReviewed": "2026-09-01",
+  "reviewedBy": { "@type": "Physician", "name": "Dr. Mauricio Neiva" }
+}
+</script>
+
+<section class="section" style="padding-top: var(--space-lg);">
+  <div class="container container--narrow">
+    <p class="eyebrow" data-reveal>Emagrecimento</p>
+    <h1 class="h1" data-reveal>Emagrecimento em Belém com acompanhamento médico.</h1>
+    <p class="lede" data-reveal style="margin-top:1rem;">Uma abordagem que considera saúde, composição corporal, rotina
+      e constância — sem fórmulas universais.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="editorial editorial--media-right">
+      <div class="editorial__figure" data-reveal>
+        {{ responsivePicture("editorial-consultation", "Ambiente preparado para uma conversa de cuidado médico", "(min-width: 860px) 50vw, 100vw") }}
+      </div>
+      <div class="editorial__body">
+        <p class="eyebrow">Por que o processo é individual?</p>
+        <h2 class="h2" style="margin-top:0.5rem;">Não existe um plano padrão.</h2>
+        <p data-reveal>Emagrecimento não deveria ser um ciclo de recomeços. Um processo bem conduzido começa ao entender
+          o momento de cada pessoa — sua rotina, seus objetivos, sua saúde e o que é possível sustentar no tempo.</p>
+        <p data-reveal>A avaliação pode considerar, quando pertinente: histórico de saúde, rotina, sono, hábitos
+          alimentares, nível de atividade física, composição corporal, medicamentos em uso, condições clínicas
+          existentes e objetivos pessoais — além de exames complementares, quando clinicamente indicados.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--sand">
+  <div class="container container--narrow stack-lg">
+    <div data-reveal>
+      <h2 class="h2">Acompanhamento com estratégia</h2>
+      <p style="margin-top:1rem;">A consulta é um espaço para organizar informações, estabelecer prioridades e construir
+        uma estratégia que faça sentido para a sua vida — não um protocolo genérico aplicado a qualquer pessoa.</p>
+      <ul class="editorial__list" style="margin-top:1rem;">
+        <li>Avaliação cuidadosa e individualizada</li>
+        <li>Estratégia compatível com rotina e objetivos</li>
+        <li>Acompanhamento próximo e ajustes quando necessários</li>
+        <li>Expectativas realistas, clareza e constância</li>
+      </ul>
+    </div>
+    <div data-reveal>
+      <h2 class="h2">Expectativas realistas fazem parte do cuidado</h2>
+      <p style="margin-top:1rem;">Não há promessa de resultado. Cada pessoa tem contexto, saúde e ritmo próprios — o
+        compromisso é com um cuidado responsável, baseado em avaliação contínua e ajustes ao longo do tempo.</p>
+    </div>
+    <div data-reveal>
+      <h2 class="h2">O acompanhamento substitui hábitos?</h2>
+      <p style="margin-top:1rem;">Não. O acompanhamento médico organiza prioridades e orienta decisões, mas hábitos são
+        construídos no dia a dia. O papel da consulta é tornar esse processo mais claro e mais sustentável.</p>
+    </div>
+    <div data-reveal>
+      <h2 class="h2">Quando buscar acompanhamento médico?</h2>
+      <p style="margin-top:1rem;">Sempre que o tema peso, composição corporal ou saúde geral estiver gerando dúvidas,
+        ou quando tentativas anteriores não tiverem sido sustentáveis no tempo. Não é preciso ter um diagnóstico prévio
+        para agendar uma avaliação.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <p class="eyebrow" data-reveal>Leitura relacionada</p>
+    <h2 class="h2" style="margin-top:0.5rem;" data-reveal>Conteúdos sobre emagrecimento</h2>
+    <div class="post-list" style="margin-top: var(--space-lg);">
+      {% for post in collections.articles %}
+        {% if post.data.category == "Emagrecimento" or post.data.category == "Hábitos" %}
+        <article class="post-card" data-reveal>
+          <p class="post-card__meta">{{ post.data.category }} · {{ post.data.readingTime }} min</p>
+          <h3 class="post-card__title">{{ post.data.title }}</h3>
+          <p class="post-card__excerpt">{{ post.data.excerpt }}</p>
+          <a href="{{ post.url }}" class="link-arrow">Ler artigo</a>
+        </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="container">
+    <h2 class="cta-final__title" data-reveal>Seu processo pode começar com uma avaliação.</h2>
+    <div class="cta-final__actions" data-reveal>
+      <a href="/contato/#agendar" class="btn btn--primary" data-track="click_agendamento" data-track-label="emagrecimento">Agendar avaliação</a>
+      <a href="/performance/" class="btn btn--ghost">Conhecer performance</a>
+    </div>
+  </div>
+</section>
