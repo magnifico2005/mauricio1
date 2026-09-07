@@ -267,25 +267,39 @@ ul, ol { list-style: none; padding: 0; }
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 0.9rem;
 }
-.brand__mark { height: 2.4rem; width: auto; flex: none; }
+.brand__mark {
+  height: clamp(2.6rem, 1.6vw + 2.1rem, 3.2rem);
+  width: auto;
+  flex: none;
+  padding: 0.3rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--dur-sm) var(--ease), box-shadow var(--dur-sm) var(--ease);
+}
+.brand:hover .brand__mark { border-color: var(--bronze-2); box-shadow: 0 4px 16px -8px rgba(160, 106, 53, 0.4); }
 .brand__text {
   font-family: var(--font-display);
-  font-size: 1.15rem;
-  letter-spacing: 0.01em;
+  font-size: 1.3rem;
+  letter-spacing: 0.005em;
   display: flex;
   flex-direction: column;
-  line-height: 1.15;
+  line-height: 1.18;
+  padding-left: 0.9rem;
+  border-left: 1px solid var(--line);
 }
-.brand__text strong { font-weight: 600; }
+.brand__text strong { font-weight: 700; }
 .brand__text span {
   font-family: var(--font-body);
   font-size: var(--fs-micro);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ink-faint);
-  font-weight: 500;
+  color: var(--bronze-ink);
+  font-weight: 600;
+  margin-top: 0.2rem;
 }
 
 .nav-desktop { display: none; }
@@ -452,16 +466,36 @@ ul, ol { list-style: none; padding: 0; }
 /* ---------- Moldura editorial (retrato do médico) ---------- */
 .figure-framed {
   --frame-pad: clamp(10px, 1.6vw, 20px);
+  --corner: 30px;
+  position: relative;
   padding: var(--frame-pad);
-  border: 1px solid var(--bronze-2);
+  border: 1px solid var(--line);
   background: var(--paper-2);
+  box-shadow: 0 24px 60px -32px rgba(160, 106, 53, 0.5);
 }
 .section--dark .figure-framed,
 .hero__figure.figure-framed {
   background: var(--navy);
-  border-color: var(--bronze-2);
+  border-color: var(--line-on-dark);
+  box-shadow: 0 30px 80px -30px rgba(192, 138, 78, 0.4);
 }
-.figure-framed img { border-radius: 2px; }
+.figure-framed::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--bronze-2), var(--bronze-2)) top left / var(--corner) 2px no-repeat,
+    linear-gradient(var(--bronze-2), var(--bronze-2)) top left / 2px var(--corner) no-repeat,
+    linear-gradient(var(--bronze-2), var(--bronze-2)) top right / var(--corner) 2px no-repeat,
+    linear-gradient(var(--bronze-2), var(--bronze-2)) top right / 2px var(--corner) no-repeat,
+    linear-gradient(var(--bronze-2), var(--bronze-2)) bottom left / var(--corner) 2px no-repeat,
+    linear-gradient(var(--bronze-2), var(--bronze-2)) bottom left / 2px var(--corner) no-repeat,
+    linear-gradient(var(--bronze-2), var(--bronze-2)) bottom right / var(--corner) 2px no-repeat,
+    linear-gradient(var(--bronze-2), var(--bronze-2)) bottom right / 2px var(--corner) no-repeat;
+}
+.figure-framed img { border-radius: 2px; position: relative; z-index: 1; }
 
 .hero__figure.figure-framed {
   position: relative;
@@ -552,7 +586,18 @@ ul, ol { list-style: none; padding: 0; }
   border-left: 2px solid var(--bronze);
   padding-left: var(--space-md);
   min-height: 12rem;
+  display: flex;
+  flex-direction: column;
 }
+.goals__media {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  margin-bottom: var(--space-md);
+  background: var(--paper-2);
+}
+.goals__media img { width: 100%; height: 100%; object-fit: cover; transition: opacity var(--dur-md) var(--ease); }
+.goals__content { flex: 1; }
 .goals__result h3 { margin-bottom: 0.6rem; }
 .goals__result p { color: var(--ink-soft); max-width: 48ch; }
 .goals__result .link-arrow { margin-top: var(--space-sm); }
@@ -709,12 +754,18 @@ ul, ol { list-style: none; padding: 0; }
 .site-footer__credit:hover { color: var(--bronze-2); }
 .site-footer__credit-mark { height: 1.35rem; width: auto; flex: none; }
 
-/* ---------- WhatsApp flutuante ---------- */
-.whatsapp-float {
+/* ---------- Ações flutuantes (WhatsApp + Instagram) ---------- */
+.float-actions {
   position: fixed;
   right: clamp(1rem, 3vw, 1.75rem);
   bottom: clamp(1rem, 3vw, 1.75rem);
   z-index: 80;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.65rem;
+}
+.float-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
@@ -725,17 +776,21 @@ ul, ol { list-style: none; padding: 0; }
   box-shadow: var(--shadow-md);
   font-size: var(--fs-small);
   font-weight: 600;
-  transition: transform var(--dur-sm) var(--ease), background-color var(--dur-sm) var(--ease), opacity var(--dur-sm) var(--ease);
+  transition: transform var(--dur-sm) var(--ease), background var(--dur-sm) var(--ease), opacity var(--dur-sm) var(--ease);
 }
-.whatsapp-float:hover { transform: translateY(-2px); background: var(--bronze-ink); }
-.whatsapp-float.is-hidden {
+.float-btn:hover { transform: translateY(-2px); }
+.float-btn--whatsapp:hover { background: var(--bronze-ink); }
+.float-btn--instagram:hover {
+  background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
+}
+.float-btn.is-hidden {
   opacity: 0;
   transform: translateY(8px);
   pointer-events: none;
 }
-.whatsapp-float svg { width: 1.15rem; height: 1.15rem; flex: none; }
-.whatsapp-float__label { display: none; }
-@media (min-width: 640px) { .whatsapp-float__label { display: inline; } }
+.float-btn svg { width: 1.15rem; height: 1.15rem; flex: none; }
+.float-btn__label { display: none; }
+@media (min-width: 640px) { .float-btn__label { display: inline; } }
 
 /* ---------- Formulário de contato ---------- */
 .form-field { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: var(--space-sm); }

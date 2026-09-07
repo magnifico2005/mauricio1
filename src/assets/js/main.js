@@ -18,14 +18,16 @@
     }));
   });
 
-  /* ---------- WhatsApp flutuante: oculta ao alcançar o rodapé ---------- */
-  const whatsappFloat = document.querySelector(".whatsapp-float");
+  /* ---------- Ações flutuantes: ocultam ao alcançar o rodapé ---------- */
+  const floatActions = document.querySelector(".float-actions");
   const siteFooter = document.querySelector(".site-footer");
-  if (whatsappFloat && siteFooter && "IntersectionObserver" in window) {
+  if (floatActions && siteFooter && "IntersectionObserver" in window) {
     const footerObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          whatsappFloat.classList.toggle("is-hidden", entry.isIntersecting);
+          floatActions.querySelectorAll(".float-btn").forEach((btn) => {
+            btn.classList.toggle("is-hidden", entry.isIntersecting);
+          });
         });
       },
       { rootMargin: "0px 0px -10% 0px" }
@@ -130,6 +132,7 @@
     const resultTitle = goalsWidget.querySelector("[data-goals-title]");
     const resultText = goalsWidget.querySelector("[data-goals-text]");
     const resultLink = goalsWidget.querySelector("[data-goals-link]");
+    const resultMedia = goalsWidget.querySelector("[data-goals-media]");
     const placeholder = goalsWidget.querySelector("[data-goals-placeholder]");
 
     buttons.forEach((btn) => {
@@ -141,14 +144,28 @@
         const text = btn.getAttribute("data-result-text");
         const href = btn.getAttribute("data-result-href");
         const linkLabel = btn.getAttribute("data-result-link-label");
+        const image = btn.getAttribute("data-result-image");
 
         if (placeholder) placeholder.hidden = true;
-        if (resultTitle) resultTitle.textContent = title || "";
-        if (resultText) resultText.textContent = text || "";
+        if (resultTitle) {
+          resultTitle.textContent = title || "";
+          resultTitle.hidden = false;
+        }
+        if (resultText) {
+          resultText.textContent = text || "";
+          resultText.hidden = false;
+        }
         if (resultLink && href) {
           resultLink.href = href;
           resultLink.textContent = linkLabel || "Saiba mais";
           resultLink.hidden = false;
+        }
+        if (resultMedia && image && resultMedia.getAttribute("src") !== image) {
+          resultMedia.style.opacity = "0";
+          window.setTimeout(() => {
+            resultMedia.setAttribute("src", image);
+            resultMedia.style.opacity = "1";
+          }, 120);
         }
         track("goal_selected", { label: title });
       });
