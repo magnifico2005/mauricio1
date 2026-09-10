@@ -7,7 +7,7 @@
       1280
     ],
     "largestWidth": 1280,
-    "largestHeight": 1998
+    "largestHeight": 1920
   },
   "editorial-performance": {
     "widths": [
@@ -44,5 +44,32 @@
     ],
     "largestWidth": 1200,
     "largestHeight": 800
+  },
+  "dr-mauricio-consulta-retrato": {
+    "widths": [
+      480,
+      800,
+      1200
+    ],
+    "largestWidth": 1200,
+    "largestHeight": 1499
+  },
+  "dr-mauricio-consultorio": {
+    "widths": [
+      480,
+      800,
+      1200
+    ],
+    "largestWidth": 1200,
+    "largestHeight": 1097
+  },
+  "dr-mauricio-consulta-performance": {
+    "widths": [
+      480,
+      800,
+      1200
+    ],
+    "largestWidth": 1200,
+    "largestHeight": 1499
   }
 }

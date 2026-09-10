@@ -26,8 +26,17 @@ bodyClass: is-home
         <span>{{ site.address.city }} — {{ site.address.state }}</span>
       </div>
     </div>
-    <div class="hero__figure figure-framed">
+    <div class="hero__figure figure-framed" data-reveal data-reveal-delay="2">
       {{ responsivePicture("dr-mauricio-hero", "Dr. Mauricio Neiva, médico, retrato de estúdio", "(min-width: 960px) 40vw, 100vw", true) }}
+      <div class="doctor-badge">
+        <span class="doctor-badge__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><path d="M12 2 4 5v6c0 5 3.4 8.6 8 11 4.6-2.4 8-6 8-11V5Z"/></svg>
+        </span>
+        <span class="doctor-badge__text">
+          <strong>{{ site.crm }}</strong>
+          <span>{{ site.specialty }}</span>
+        </span>
+      </div>
     </div>
   </div>
 </section>
@@ -113,7 +122,7 @@ bodyClass: is-home
             data-result-title="Organizar a saúde"
             data-result-text="Conheça como funciona a avaliação médica individualizada, do primeiro contato aos retornos de acompanhamento."
             data-result-href="/sobre/" data-result-link-label="Conhecer o atendimento"
-            data-result-image="/assets/images/dr-mauricio-hero-720.webp">
+            data-result-image="/assets/images/logo-mauricio-neiva-192.png" data-result-media="logo">
             Quero organizar minha saúde
           </button>
           <button type="button" class="goal-btn" aria-pressed="false"
@@ -134,13 +143,13 @@ bodyClass: is-home
             data-result-title="Outra necessidade"
             data-result-text="Sem problema. O melhor caminho é conversar diretamente e explicar o seu momento pelo WhatsApp."
             data-result-href="/contato/" data-result-link-label="Ir para contato"
-            data-result-image="/assets/images/dr-mauricio-hero-720.webp">
+            data-result-image="/assets/images/logo-mauricio-neiva-192.png" data-result-media="logo">
             Tenho outra necessidade
           </button>
         </div>
         <div class="goals__result">
-          <div class="goals__media">
-            <img src="/assets/images/dr-mauricio-hero-720.webp" alt="" data-goals-media loading="lazy">
+          <div class="goals__media" data-fit="logo">
+            <img src="/assets/images/logo-mauricio-neiva-192.png" alt="" data-goals-media loading="lazy">
           </div>
           <div class="goals__content">
             <p class="goals__placeholder" data-goals-placeholder>Selecione uma opção ao lado para ver o caminho mais indicado.</p>
@@ -159,7 +168,7 @@ bodyClass: is-home
   <div class="container">
     <div class="editorial editorial--media-right">
       <div class="editorial__figure">
-        {{ responsivePicture("editorial-consultation", "Ambiente preparado para uma conversa de cuidado médico", "(min-width: 860px) 50vw, 100vw") }}
+        {{ responsivePicture("dr-mauricio-consulta-retrato", "Dr. Mauricio Neiva em atendimento", "(min-width: 860px) 50vw, 100vw") }}
       </div>
       <div class="editorial__body">
         <p class="eyebrow" data-reveal>Emagrecimento</p>
@@ -182,7 +191,7 @@ bodyClass: is-home
   <div class="container">
     <div class="editorial editorial--media-left">
       <div class="editorial__figure">
-        {{ responsivePicture("editorial-performance", "Itens de rotina e atividade física organizados em ambiente natural", "(min-width: 860px) 50vw, 100vw") }}
+        {{ responsivePicture("dr-mauricio-consulta-performance", "Dr. Mauricio Neiva em seu consultório", "(min-width: 860px) 50vw, 100vw") }}
       </div>
       <div class="editorial__body">
         <p class="eyebrow" data-reveal>Performance</p>
@@ -250,13 +259,15 @@ bodyClass: is-home
     <p class="eyebrow" data-reveal>Conteúdos</p>
     <h2 class="h2" style="margin-top:0.5rem;" data-reveal>Informação clara também faz parte do cuidado.</h2>
     <div class="post-list" style="margin-top: var(--space-lg);">
-      {% for post in collections.articles | reverse | slice(0, 3) %}
+      {% for post in collections.articles %}
+      {% if loop.index0 < 3 %}
       <article class="post-card" data-reveal>
         <p class="post-card__meta">{{ post.data.category }} · {{ post.data.readingTime }} min</p>
         <h3 class="post-card__title">{{ post.data.title }}</h3>
         <p class="post-card__excerpt">{{ post.data.excerpt }}</p>
         <a href="{{ post.url }}" class="link-arrow">Ler artigo</a>
       </article>
+      {% endif %}
       {% endfor %}
     </div>
     <a href="/blog/" class="link-arrow" style="margin-top: var(--space-lg); display:inline-flex;" data-reveal>Ver todos os conteúdos</a>

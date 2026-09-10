@@ -133,6 +133,7 @@
     const resultText = goalsWidget.querySelector("[data-goals-text]");
     const resultLink = goalsWidget.querySelector("[data-goals-link]");
     const resultMedia = goalsWidget.querySelector("[data-goals-media]");
+    const resultMediaWrap = goalsWidget.querySelector(".goals__media");
     const placeholder = goalsWidget.querySelector("[data-goals-placeholder]");
 
     buttons.forEach((btn) => {
@@ -145,6 +146,7 @@
         const href = btn.getAttribute("data-result-href");
         const linkLabel = btn.getAttribute("data-result-link-label");
         const image = btn.getAttribute("data-result-image");
+        const isLogo = btn.getAttribute("data-result-media") === "logo";
 
         if (placeholder) placeholder.hidden = true;
         if (resultTitle) {
@@ -161,10 +163,17 @@
           resultLink.hidden = false;
         }
         if (resultMedia && image && resultMedia.getAttribute("src") !== image) {
-          resultMedia.style.opacity = "0";
+          resultMedia.classList.add("is-swapping");
           window.setTimeout(() => {
             resultMedia.setAttribute("src", image);
-            resultMedia.style.opacity = "1";
+            if (resultMediaWrap) {
+              if (isLogo) {
+                resultMediaWrap.setAttribute("data-fit", "logo");
+              } else {
+                resultMediaWrap.removeAttribute("data-fit");
+              }
+            }
+            resultMedia.classList.remove("is-swapping");
           }, 120);
         }
         track("goal_selected", { label: title });

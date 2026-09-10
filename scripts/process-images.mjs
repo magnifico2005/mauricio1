@@ -9,11 +9,21 @@ const SRC_DIR = path.join(ROOT, "assets", "images", "originals");
 const OUT_DIR = path.join(ROOT, "src", "assets", "images");
 
 const jobs = [
-  { file: "dr-mauricio-hero-authoridade.png", out: "dr-mauricio-hero", widths: [480, 720, 960, 1280] },
+  {
+    file: "dr-mauricio-hero-authoridade.png",
+    out: "dr-mauricio-hero",
+    widths: [480, 720, 960, 1280],
+    // Recorte fechado no retrato (2:3), removendo fundo excedente acima da cabeça
+    // e nas laterais para um enquadramento mais editorial e sem crop residual no CSS.
+    crop: { left: 30, top: 55, width: 944, height: 1416 },
+  },
   { file: "editorial-performance.jpg", out: "editorial-performance", widths: [480, 800, 1200] },
   { file: "editorial-consultation.jpg", out: "editorial-consultation", widths: [480, 800, 1200] },
   { file: "article-rotina.png", out: "article-rotina", widths: [480, 800, 1200] },
   { file: "article-performance.png", out: "article-performance", widths: [480, 800, 1200] },
+  { file: "dr-mauricio-consulta-retrato.png", out: "dr-mauricio-consulta-retrato", widths: [480, 800, 1200] },
+  { file: "dr-mauricio-consultorio.png", out: "dr-mauricio-consultorio", widths: [480, 800, 1200] },
+  { file: "dr-mauricio-consulta-performance.png", out: "dr-mauricio-consulta-performance", widths: [480, 800, 1200] },
 ];
 
 // Logos: PNG de origem com transparência real — preservar alpha, sem fallback JPG.
@@ -28,7 +38,10 @@ async function run() {
 
   for (const job of jobs) {
     const srcPath = path.join(SRC_DIR, job.file);
-    const meta = await sharp(srcPath).metadata();
+    const source = job.crop ? sharp(srcPath).extract(job.crop) : sharp(srcPath);
+    const meta = job.crop
+      ? { width: job.crop.width, height: job.crop.height }
+      : await sharp(srcPath).metadata();
     const maxWidth = meta.width || 1600;
     const aspect = meta.height / meta.width;
     imageMeta[job.out] = {
@@ -39,7 +52,7 @@ async function run() {
 
     for (const width of job.widths) {
       const targetWidth = Math.min(width, maxWidth);
-      const base = sharp(srcPath).resize({ width: targetWidth, withoutEnlargement: true });
+      const base = source.clone().resize({ width: targetWidth, withoutEnlargement: true });
 
       await base.clone().avif({ quality: 60 }).toFile(path.join(OUT_DIR, `${job.out}-${width}.avif`));
       await base.clone().webp({ quality: 82 }).toFile(path.join(OUT_DIR, `${job.out}-${width}.webp`));
